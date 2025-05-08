@@ -27,3 +27,24 @@ void colocar_peca(int tab[5][5], char linha_letra, int coluna) {
         printf("Posição inválida: (%c, %d)\n", linha_letra, coluna);
     }
 }
+int main() {
+    // Criar tabuleiro 5x5 inicializado com 0s
+    int tabuleiro[5][5] = {0};
+
+    // Posições fornecidas: (A,0), (A,1), (A,2), (C,4), (D,4), (E,4)
+    struct {
+        char linha;
+        int coluna;
+    } posicoes[] = {{'A', 0}, {'A', 1}, {'A', 2}, {'C', 4}, {'D', 4}, {'E', 4}};
+    
+    // Colocar as peças nas posições especificadas
+    for (int i = 0; i < 6; i++) {
+        colocar_peca(tabuleiro, posicoes[i].linha, posicoes[i].coluna);
+    }
+
+    // Exibir o tabuleiro final
+    printf("Tabuleiro 5x5 com peças (3) e espaços vazios (0):\n");
+    exibir_tabuleiro(tabuleiro);
+
+    return 0;
+}
