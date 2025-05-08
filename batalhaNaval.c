@@ -15,3 +15,15 @@ void exibir_tabuleiro(int tab[5][5]) {
     printf("  ---------------\n");
 }
 
+// Função para colocar uma peça (3) em uma posição
+void colocar_peca(int tab[5][5], char linha_letra, int coluna) {
+    // Converter letra da linha para índice (A=0, B=1, ..., E=4)
+    int linha = toupper(linha_letra) - 'A';
+    
+    // Verificar se a posição é válida
+    if (linha >= 0 && linha < 5 && coluna >= 0 && coluna < 5) {
+        tab[linha][coluna] = 3;
+    } else {
+        printf("Posição inválida: (%c, %d)\n", linha_letra, coluna);
+    }
+}
